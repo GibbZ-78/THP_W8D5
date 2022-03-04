@@ -99,9 +99,9 @@ function changeViewButtons() {
   let tmp_length = document.querySelectorAll("div.btn-group").length;
   for (let my_index = 0; my_index < tmp_length; my_index++) {
     console.log("  > Avant : " + document.querySelectorAll("div.btn-group")[my_index].children[0].classList);
-    // Approach #1 below does not work... Do not understand why : read only prop ? "replace" is obsolete ?
+    // Approach #1 below does NOT work... Do not understand why : read only prop ? "replace" is obsolete ?
     //   document.querySelectorAll("div.btn-group")[my_index].firstChild.classList.replace("btn-outline-secondary", "btn-success");
-    // Approach #2 below does not work either... For unknown reasons : read only prop ? "add" or "remove" obsolete ?
+    // Approach #2 below does NOT work either... For unknown reasons and cannot loop with forEach neither...
     //   document.querySelectorAll("div.btn-group")[my_index].firstChild.classList.add("btn-success");
     //   document.querySelectorAll("div.btn-group")[my_index].firstChild.classList.remove("btn-outline-secondary");
     //   document.getElementsByClassName("btn-group")[my_index].firstChild.className.replace("btn-outline-secondary", "btn-success");
@@ -112,6 +112,20 @@ function changeViewButtons() {
   console.log("\n");
 }
 
+// JBV - (1) Add a <div> with the "row" class just after the one containing the cards.
+//       (2) Move the 3rd card from the original row-typed div to the one you just created.
+//       #===> It should look like some kind of twisted pyramid...
+function twistedPyramid() {
+  console.log("Modification n°8 :");
+  let my_div = document.createElement('div');
+  my_div.classList.add("row");
+  console.log("  > Nouvelle <div>: " + my_div.classList);
+  my_div.appendChild(document.getElementsByClassName("card")[2]);
+  console.log("  > Added 3rd card to new <div>: " + my_div.children[0].innerHTML.slice(0, 100) + " (...)");
+  document.querySelectorAll("div.row")[1].appendChild(my_div);
+  console.log("  > New <div> and its child card moved at the bottom of the web page to found the pyramid");
+  console.log("\n");
+}
 
 // JBV - Main program calling all requested functions
 // BEGIN
@@ -131,6 +145,8 @@ changeCardsText();
 // Modification n°7
 changeViewButtons();
 // Modification n°8
-
+twistedPyramid();
+//
+console.log("\n\n\tTHE END... AT LAST!\n");
 //
 // END
