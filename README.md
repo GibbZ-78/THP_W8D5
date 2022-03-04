@@ -2,13 +2,12 @@
 
 ### :one: Content :scroll:
   
-- Ex. 1: Hello World!  
-- Ex. 2: Compute factorial  
-- Ex. 3: Good ol' pyramid...  
-- Ex. 4: Startup nation  
-- Ex. 5: The Librarian's nest  
-- Ex. 6: DNA Scripting  
-- Ex. 7: Pimple Bot  
+- "exo_parcours_DOM.html" page:  
+  - 7 exercises showing access and manipulation of the values / contents of different DOM elements and tree levels  
+  - Results are visible solely when showing your browser's debug / developer console (cf. "How to" setion below)  
+- "exo_modif_DOM.html" page:  
+    - 8 other exercises apprehending DOM elements manipulation (valuation, suppression, displacement...)  
+    - It might be needed to reload the HTML page to see the modifications effectively being applied and/or, again, to have a look at your browser's console  
   
 ### :two: How to :bulb:
   
